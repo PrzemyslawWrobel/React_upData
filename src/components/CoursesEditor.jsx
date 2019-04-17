@@ -1,4 +1,9 @@
-const CoursesEditor = React.createClass({
+import React from 'react';
+
+import {CoursesSearch} from './CoursesSearch';
+import {CourseForm} from './CourseForm';
+
+export const CoursesEditor = React.createClass({
 
 	getInitialState: function(){
 		return {

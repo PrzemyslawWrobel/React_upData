@@ -1,4 +1,6 @@
-const CoursesSearch = React.createClass({
+import React from 'react';
+
+export const CoursesSearch = React.createClass({
 
 	getInitialState: function(){
 		return {

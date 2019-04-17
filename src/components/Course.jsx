@@ -1,4 +1,13 @@
-const CourseDetails = ({data}) => (
+import React from 'react';
+import {Rating} from './Rating'
+import {CartButton} from './Cart'
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+
+export const CourseDetails = ({data}) => (
 	<div>
 	  	<table className="table course_details">
 	  		<tbody>
@@ -26,13 +35,13 @@ const CourseDetails = ({data}) => (
 	</div>
 )
 
-const CourseMedia = ({data}) => ( <img src={data.image} alt="cover" />)
+export const CourseMedia = ({data}) => ( <img src={data.image} alt="cover" />)
 
-const NewLabel = ({data}) => ( data.is_new? <span className="label label-default">Nowy!</span> : null)
+export const NewLabel = ({data}) => ( data.is_new? <span className="label label-default">Nowy!</span> : null)
 
-const CoursePromoLabel = ({data}) => ( data.is_promo? <b>Kurs jest w PROMOCJI!</b> : null)
+export const CoursePromoLabel = ({data}) => ( data.is_promo? <b>Kurs jest w PROMOCJI!</b> : null)
 
-const Course = (props) => {
+export const Course = (props) => {
 	const {data, Details} = props;
 
 	return (

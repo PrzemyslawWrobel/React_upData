@@ -20,10 +20,12 @@ function StateStore(){
 
 	this.createAction = function(handler){
 		var state = this.state;
+		var self = this;
+
 		return function(){
 			handler.apply(state, arguments);
 
-			AppState.dispatchEvents();
+			self.dispatchEvents();
 		}
 	},
 
@@ -35,3 +37,5 @@ function StateStore(){
 		return actions;
 	}
 }
+
+export default StateStore

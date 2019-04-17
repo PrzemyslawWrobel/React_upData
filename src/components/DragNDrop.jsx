@@ -1,5 +1,6 @@
+import React from 'react';
 
-const Draggable = (props) => {
+export const Draggable = (props) => {
 
 	function onDragStart(e){
 		if(props.image){
@@ -14,7 +15,7 @@ const Draggable = (props) => {
 	return <div draggable="true" onDragStart={onDragStart}>{props.children}</div>
 }
 
-const Droppable = (props) => {
+export const Droppable = (props) => {
 
 	function onDragOver(e){
 		e.preventDefault()

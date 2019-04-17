@@ -1,29 +1,4 @@
-
-const AppState = new StateStore();
-
-AppState.setState({
-	page: 1,
-	courses_source: courses_data,
-
-	courses_map: courses_data.reduce((map, course) => {
-		map[course.id] = course;
-		return map;
-	},{}),
-	courses_list: courses_data.slice(0,3),
-
-	authors_map: courses_data.reduce((map, course)=>(
-		(map[course.author] = course.author) && map
-	),{}),
-
-	favourites_list: [],
-	favourites_map: {},
-
-	cart_list: [],
-	cart_map: {},
-
-	activeTab: 'Wyszukiwarka',
-})
-
+import AppState from './AppState';
 
 const actions = AppState.createActions({
 	loadMore: function(event){
@@ -70,10 +45,10 @@ const actions = AppState.createActions({
 		}
 	},
 	navigateTo: function(tabName){
+		console.log('tabName',tabName, this)
 		this.activeTab = tabName
 	}
 })
 
 
-ReactDOM.render(<App store={AppState} actions={actions} />, document.getElementById('root'));
-
+export default actions

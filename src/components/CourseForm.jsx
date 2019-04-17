@@ -1,4 +1,9 @@
-const CourseForm = React.createClass({
+import React from 'react';
+
+import AppState from '../AppState'
+import {CourseCategoriesEditor} from './CourseCategoriesEditor'
+
+export const CourseForm = React.createClass({
 
 	getInitialState: function(){
 		return {

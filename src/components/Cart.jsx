@@ -1,4 +1,12 @@
-const CartButton = ({course, className = "btn btn-block", icon, label}) => {
+import React from 'react';
+
+import Button from './Button'
+import {Course} from './Course'
+
+import AppState from '../AppState';
+import actions from '../actions';
+
+export const CartButton = ({course, className = "btn btn-block", icon, label}) => {
 	let in_cart = AppState.state.cart_map[course.id];
 	let onClick= ()=>(
 		in_cart? actions.removeFromCart(course.id) : actions.addToCart(course.id)
@@ -10,14 +18,14 @@ const CartButton = ({course, className = "btn btn-block", icon, label}) => {
 	)
 }
 
-const CartDetails = (props) => (
+export const CartDetails = (props) => (
 	<div className="course_details text-center">
 		<h1 className="thumbnail">{props.data.price} PLN</h1>
 		<CartButton course={props.data} />
 	</div>
 )
 
-const ShoppingCartList = ({list}) =>(
+export const ShoppingCartList = ({list}) =>(
 	<div>
 		<h1> Koszyk </h1>
 		<hr />

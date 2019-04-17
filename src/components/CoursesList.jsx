@@ -1,4 +1,17 @@
-const CoursesList = ({list}) => (
+import React from 'react';
+import {Draggable} from './DragNDrop'
+import {Course, CoursePromoLabel, CourseDetails} from './Course'
+import Button from './Button'
+import {FavButton} from './FavButton'
+
+import AppState from '../AppState'
+import actions from '../actions'
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+export const CoursesList = ({list}) => (
 	<div>
 		<h1> Kursy </h1>
 		<hr />

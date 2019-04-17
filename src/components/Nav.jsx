@@ -1,13 +1,19 @@
-const Tabs = (props) => {
+import React from 'react';
+import { Droppable, Draggable } from './DragNDrop'
+import AppState from '../AppState'
+import actions from '../actions'
+
+
+export const Tabs = (props) => {
 	let tabs = React.Children.toArray(props.children)
 
 	return <div>{tabs.filter(tab => props.activeTab === tab.props.name )}</div>
 }
-const TabPanel = (props) => {
+export const TabPanel = (props) => {
 	return <div>{props.children}</div>
 }
 
-const TabsNav = (props) => {
+export const TabsNav = (props) => {
 	let tabs = React.Children.toArray(props.children)
 
 	return <ul className={props.className || "nav nav-tabs"}>
@@ -20,11 +26,11 @@ const TabsNav = (props) => {
 		</li> )}
 	</ul>
 }
-const Tab = (props) => {
+export const Tab = (props) => {
 	return props.children || <a href="#">{props.name}</a>
 }
 
-const Nav = (props) => {
+export const Nav = (props) => {
 	return <nav className="navbar navbar-default">
 	  <div className="container-fluid">
 	    <div className="navbar-header">
@@ -37,6 +43,7 @@ const Nav = (props) => {
     	</TabsNav>
 
     	<TabsNav className="nav navbar-nav navbar-right" onChange={props.onChange} activeTab={props.activeTab}>
+    		<Tab name="Wyszukiwarka"></Tab>
     		<Tab name="Koszyk">
 	    		<a href="#">
 		        	<Droppable onDrop={(data)=>actions.addToCart(data)}>

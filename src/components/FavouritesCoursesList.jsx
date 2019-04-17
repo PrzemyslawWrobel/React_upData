@@ -1,4 +1,12 @@
-const FavouritesCoursesList = ({list}) => (
+import React from 'react';
+import {Course, CoursePromoLabel, CourseDetails} from './Course';
+import Button from './Button';
+import {FavButton} from './FavButton';
+import {Draggable} from './DragNDrop';
+import AppState from '../AppState';
+import actions from '../actions';
+
+export const FavouritesCoursesList = ({list}) => (
 	<div>
 		<h1> Ulubione Kursy </h1>
 		<hr />

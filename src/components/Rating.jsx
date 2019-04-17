@@ -1,4 +1,6 @@
-const Rating = React.createClass({
+import React from 'react';
+
+export const Rating = React.createClass({
 
 	getDefaultProps: function(){
 		return {

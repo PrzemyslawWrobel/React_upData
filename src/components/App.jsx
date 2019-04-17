@@ -1,3 +1,11 @@
+import React from 'react';
+import {Nav, Tabs, TabPanel} from './Nav';
+import {CoursesEditor} from './CoursesEditor';
+import {ShoppingCartList} from './Cart';
+import {FavouritesCoursesList} from './FavouritesCoursesList';
+import {CoursesList} from './CoursesList';
+import Button from './Button';
+
 const App = React.createClass({
 
 	getInitialState: function(){
@@ -19,7 +27,7 @@ const App = React.createClass({
 		return (
 		  <div>
 		    <div className="container">
-		      <Nav onChange={actions.navigateTo} activeTab={this.state.activeTab} ></Nav>
+		      <Nav onChange={this.props.actions.navigateTo} activeTab={this.state.activeTab} ></Nav>
 		      <div className="row">
 		        <div className="col-xs-12">
 		        </div>
@@ -54,3 +62,5 @@ const App = React.createClass({
 		)
 	}
 })
+
+export default App 

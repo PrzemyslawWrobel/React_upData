@@ -1,4 +1,6 @@
-const LifeCycle = React.createClass({
+import React from 'react';
+
+export const LifeCycle = React.createClass({
 
 	getDefaultProps: function(){
 		console.log('getDefaultProps',arguments, this.props);	

@@ -1,4 +1,12 @@
-const CourseCategoriesEditor = React.createClass({
+import React from 'react';
+
+import * as jquery from 'jquery/dist/jquery'
+import * as typeahead from 'typeahead.js/dist/typeahead.bundle'
+var $ = jquery.noConflict();
+
+import categoriesSource from '../categoriesSource'
+
+export const CourseCategoriesEditor = React.createClass({
 	
 	getInitialState: function(){
 		return {

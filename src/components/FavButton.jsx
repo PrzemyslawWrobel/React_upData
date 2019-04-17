@@ -1,4 +1,7 @@
-const FavButton = React.createClass({
+import React from 'react';
+import Button from './Button'
+
+export const FavButton = React.createClass({
 
 	getInitialState: function(){
 		return {
