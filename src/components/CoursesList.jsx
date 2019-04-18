@@ -2,16 +2,13 @@ import React from 'react';
 import {Draggable} from './DragNDrop'
 import {Course, CoursePromoLabel, CourseDetails} from './Course'
 import Button from './Button'
-import {FavButton} from './FavButton'
+import {FavButtonContainer} from '../containers/buttons'
+
 
 import AppState from '../AppState'
-import actions from '../actions'
+//import actions from '../actions'
 
-if (module.hot) {
-  module.hot.accept();
-}
-
-export const CoursesList = ({list}) => (
+export const CoursesList = ({list}, context) => (
 	<div>
 		<h1> Kursy </h1>
 		<hr />
@@ -24,9 +21,7 @@ export const CoursesList = ({list}) => (
 				  		{/* Course Actions */}
 						<div className="btn-group pull-right">
 							<Button label="Szczególy kursu" />
-							<FavButton active={AppState.state.favourites_map[data.id]} 
-								onActivate={()=>actions.addFavourite(data.id)} 
-								onDeactivate={()=>actions.removeFavourite(data.id)}  />
+							<FavButtonContainer id={data.id}  />
 						</div>
 					</Course>
 				</Draggable>
@@ -34,3 +29,6 @@ export const CoursesList = ({list}) => (
 		</div>
 	</div>
 )
+CoursesList.contextTypes = {
+	actions: React.PropTypes.object,
+}

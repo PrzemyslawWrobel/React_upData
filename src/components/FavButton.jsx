@@ -3,6 +3,12 @@ import Button from './Button'
 
 export const FavButton = React.createClass({
 
+	propTypes:{
+		active: React.PropTypes.bool,
+		onActivate: React.PropTypes.func.isRequired,
+		onDeactivate: React.PropTypes.func.isRequired
+	},
+
 	getInitialState: function(){
 		return {
 			active: this.props.active
@@ -39,8 +45,8 @@ export const FavButton = React.createClass({
 
 	render: function(){
 		return (this.state.active?
-			<Button label="Usuń z ulubionych" icon="star" onClick={this.setInactive} /> :
-			<Button label="Dodaj do ulubionych" icon="star-empty" onClick={this.setActive} />
+			<Button label={this.props.labels.remove_fav} icon="star" onClick={this.setInactive} /> :
+			<Button label={this.props.labels.add_fav} icon="star-empty" onClick={this.setActive} />
 		)
 	}
 })

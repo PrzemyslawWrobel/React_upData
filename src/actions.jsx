@@ -45,7 +45,6 @@ const actions = AppState.createActions({
 		}
 	},
 	navigateTo: function(tabName){
-		console.log('tabName',tabName, this)
 		this.activeTab = tabName
 	}
 })

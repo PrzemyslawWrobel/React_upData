@@ -26,6 +26,13 @@ export const TabsNav = (props) => {
 		</li> )}
 	</ul>
 }
+TabsNav.propTypes = {
+	className: React.PropTypes.string,
+	onChange: React.PropTypes.func.isRequired,
+	activeTab: React.PropTypes.string,
+	children: React.PropTypes.arrayOf(React.PropTypes.element)
+}
+
 export const Tab = (props) => {
 	return props.children || <a href="#">{props.name}</a>
 }

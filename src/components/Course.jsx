@@ -2,11 +2,6 @@ import React from 'react';
 import {Rating} from './Rating'
 import {CartButton} from './Cart'
 
-if (module.hot) {
-  module.hot.accept();
-}
-
-
 export const CourseDetails = ({data}) => (
 	<div>
 	  	<table className="table course_details">
